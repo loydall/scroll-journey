@@ -18,8 +18,31 @@
   }
   
   h1 {
-    font-size: 2rem;
+    font-size: 12rem;
     line-height: 1.1;
+  }
+
+  scroll-journey {
+    display: block;
+  }
+
+  scroll-section {
+    display: none;
+    height: 100lvh;
+    width: 100lvw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  scroll-element {
+    display: block;
+  }
+
+  .scroll-section--active {
+    display: block;
   }
   
   

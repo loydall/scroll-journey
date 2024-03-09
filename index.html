@@ -8,7 +8,30 @@
   </head>
   <body>
     <div id="app">
-        
+        <scroll-journey>
+          <scroll-section duration="10000" in="fade" out="fade" in-duration="2000" out-duration="2000">
+            <h1>One</h1>
+            <scroll-element in="fade" out="fade" keyframes="20,25,50,55">
+              This
+            </scroll-element>
+            <scroll-element in="fade" out="fade" keyframes="30,35,60,65">
+              Is
+            </scroll-element>
+            <scroll-element in="fade" out="fade" keyframes="40,45,70,75">
+              Animated
+            </scroll-element>
+            <scroll-element in="fade" out="fade" keyframes="50,55,80,85">
+              Text
+            </scroll-element>
+          </scroll-section>
+          <scroll-section duration="10000" in="zoom-in" out="fade" in-duration="2000" out-duration="2000">
+            <h1>Two</h1>
+          </scroll-section>
+          <scroll-section duration="10000" in="zoom-out" out="fade" in-duration="2000" out-duration="2000">
+            <h1>Three</h1>
+            <h1>THIS</h1>
+          </scroll-section>
+        </scroll-journey>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
