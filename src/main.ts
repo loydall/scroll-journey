@@ -1,125 +1,13 @@
+import { AnimationDirection } from './models/AnimationDirection.model'
+import { ScrollElement } from './models/ScrollElement.model'
+import { ScrollSection } from './models/ScrollSection.model'
+
 import './style.css'
-
-enum AnimationDirection {
-  in = 'in',
-  out = 'out'
-}
-
-enum AnimationType {
-  fade = 'fade',
-  zoomIn = 'zoom-in',
-  zoomOut = 'zoom-out',
-  scrollUp = 'scroll-up',
-  none = 'none'
-}
-
-interface SectionAnimation {
-  animationInType: AnimationType
-  animationOutType: AnimationType
-  animationInDuration: number
-  animationOutDuration: number
-}
-
-interface ScrollElement {
-  element: Element
-  animationInStart: number
-  animationInEnd: number
-  animationOutStart: number
-  animationOutEnd: number
-  animationInType: AnimationType
-  animationOutType: AnimationType
-}
-
-interface ScrollSection {
-  start: number
-  end: number
-  animation: SectionAnimation
-  section: Element
-  elements: Array<ScrollElement>
-}
-
-const registerSections = (target: Element): Array<ScrollSection> => {
-  const scrollSections = Array.from(target.querySelectorAll('scroll-section'))
-
-  let sectionStart = 0
-
-  return scrollSections.map((section: Element) => {
-    const duration: number = Number(section.getAttribute('duration')) || 0
-    const animationInDuration = Number(section.getAttribute('in-duration')) || 0
-    const animationOutDuration = Number(section.getAttribute('out-duration')) || 0
-
-    const sectionAnimation: SectionAnimation = {
-      animationInType: section.getAttribute('in') as AnimationType || AnimationType.none,
-      animationOutType: section.getAttribute('out') as AnimationType || AnimationType.none,
-      animationInDuration,
-      animationOutDuration,
-    }
-
-    const sectionDuration = duration + animationInDuration + animationOutDuration
-
-    const sectionElements = Array.from(section.querySelectorAll('scroll-element')) || []
-
-    const elements = sectionElements.map((sectionElement: Element): ScrollElement => {
-        const elementFrames: string = sectionElement.getAttribute('keyframes') || ''
-        const keyFrames = elementFrames.split(',')
-        const sectionPercentage = sectionDuration / 100
-
-        return {
-          element: sectionElement,
-          animationInStart: sectionStart + Number(keyFrames[0]) * sectionPercentage,
-          animationInEnd: sectionStart + Number(keyFrames[1]) * sectionPercentage,
-          animationOutStart: sectionStart + Number(keyFrames[2]) * sectionPercentage,
-          animationOutEnd: sectionStart + Number(keyFrames[3]) * sectionPercentage,
-          animationInType:  sectionElement.getAttribute('in') as AnimationType || AnimationType.none,
-          animationOutType: sectionElement.getAttribute('out') as AnimationType || AnimationType.none
-        }
-    })
-
-    const scrollSection: ScrollSection = {
-      section,
-      animation: sectionAnimation,
-      start: sectionStart,
-      end: sectionStart + sectionDuration,
-      elements
-    }
-
-    sectionStart+= sectionDuration
-
-    return scrollSection
-  })
-}
+import { registerSections } from './utils/ScrollSection.utils'
+import { setElementStyles } from './utils/Style.utils'
 
 let scrollSections: Array<ScrollSection>
 let targetY: number = 0;
-
-const setElementStyles = (animationType: AnimationType, element: Element, animationComplete: number, animationDirection: AnimationDirection ) => {
-  switch (animationType) {
-    case AnimationType.fade: {
-      switch (animationDirection) {
-        case AnimationDirection.in:
-        {
-          element.setAttribute('style', `opacity: ${animationComplete / 100}; will-change: opacity;`)
-          break
-        }
-        case AnimationDirection.out:{
-          element.setAttribute('style', `opacity: ${(100 - animationComplete) / 100}; will-change: opacity;`)
-          break
-        }
-      }
-      break
-    }
-    case AnimationType.zoomOut: 
-    {
-      element.setAttribute('style', `opacity: ${animationComplete / 100}; transform: scale(${5 - (animationComplete / 100) * 4}); will-change: transform, opacity;`)
-      break
-    }
-    case AnimationType.zoomIn: 
-    {
-      element.setAttribute('style', `opacity: ${animationComplete / 100}; transform: scale(${(animationComplete / 100)}); will-change: transform, opacity;`)
-      break
-    }
-  }
-}
 
 const applySectionAnimation = (animationInComplete: number, animationOutComplete: number, scrollSection: ScrollSection) => {
   if(animationInComplete > 0 && animationInComplete < 100) {
@@ -214,7 +102,7 @@ const scrollJourney = () => {
   const scrollJourneys = document.querySelectorAll('scroll-journey')
   if(!scrollJourneys) return
   if(scrollJourneys.length > 1) {
-    console.log('Only 1 scroll-journey allowed per page')
+    console.warn('Only 1 scroll-journey allowed per page')
     return
   }
   const scrollJourney: Element = scrollJourneys[0]
