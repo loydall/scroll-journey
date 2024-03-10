@@ -1,112 +1,128 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scroll Journey</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:wght@300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="app">
-      <scroll-journey>
-        <scroll-section
-          class="scroll-section--blue"
-          duration="7000"
-          in="fade"
-          out="scroll-up"
-          in-duration="100"
-          out-duration="1000"
-        >
-          <h1>THIS IS SCROLL-JOURNEY</h1>
-          <scroll-element in="fade" out="fade" keyframes="20,25,50,55">
-            A
-          </scroll-element>
-          <scroll-element in="fade" out="fade" keyframes="30,35,60,65">
-            SCROLL-BASED
-          </scroll-element>
-          <scroll-element in="fade" out="fade" keyframes="40,45,70,75">
-            ANIMATION
-          </scroll-element>
-          <scroll-element in="fade" out="fade" keyframes="50,55,80,85">
-            FRAMEWORK
-          </scroll-element>
-        </scroll-section>
-        <scroll-section
-          overlap="1000"
-          class="scroll-section--pink"
-          duration="6000"
-          in="scroll-up"
-          out="fade"
-          in-duration="1000"
-          out-duration="1000"
-        >
-          <scroll-element
-            class="scroll-section--centre"
-            in="fade"
-            out="fade"
-            keyframes="13,17,23,25"
-          >
-            <h1>THIS</h1>
-          </scroll-element>
-          <scroll-element
-            class="scroll-section--centre"
-            in="fade"
-            out="fade"
-            keyframes="25,27,33,35"
-          >
-            <h1>IS</h1>
-          </scroll-element>
-          <scroll-element
-            class="scroll-section--centre"
-            in="fade"
-            out="fade"
-            keyframes="35,37,43,45"
-          >
-            <h1>SECTION</h1>
-          </scroll-element>
-          <scroll-element
-            class="scroll-section--centre"
-            in="fade"
-            out="fade"
-            keyframes="45,47,53,85"
-          >
-            <h1>TWO</h1>
-          </scroll-element>
-        </scroll-section>
-        <scroll-section
-          overlap="1000"
-          duration="10000"
-          in="zoom-out"
-          out="fade"
-          in-duration="1000"
-          out-duration="2000"
-        >
-          <h1>THIS IS A FULL-SCREEN BACKGROUND VIDEO</h1>
-          <scroll-element
-            class="scroll-section--full-screen-background"
-            duration="10000"
-            in="clip-rectangle"
-            out="clip-rectangle"
-            keyframes="8,30,90,100"
-          >
-            <video
-              src="https://player.vimeo.com/progressive_redirect/playback/903290686/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=a3d86dbdfce82d45c3a6f46aa6e990dad579744e895c2ca0d38a4434407dfca6"
-              preload="metadata"
-              autoplay=""
-              loop=""
-              muted=""
-              playsinline=""
-            ></video>
-          </scroll-element>
-        </scroll-section>
-      </scroll-journey>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Scroll Journey</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="app">
+			<scroll-journey>
+				<scroll-section
+					class="scroll-section--blue"
+					duration="7000"
+					in="fade"
+					out="scroll-up"
+					in-duration="100"
+					out-duration="1000"
+				>
+					<h1>THIS IS SCROLL-JOURNEY</h1>
+					<scroll-element
+						in="fade"
+						out="fade"
+						keyframes="20,25,50,55"
+					>
+						A
+					</scroll-element>
+					<scroll-element
+						in="fade"
+						out="fade"
+						keyframes="30,35,60,65"
+					>
+						SCROLL-BASED
+					</scroll-element>
+					<scroll-element
+						in="fade"
+						out="fade"
+						keyframes="40,45,70,75"
+					>
+						ANIMATION
+					</scroll-element>
+					<scroll-element
+						in="fade"
+						out="fade"
+						keyframes="50,55,80,85"
+					>
+						FRAMEWORK
+					</scroll-element>
+				</scroll-section>
+				<scroll-section
+					overlap="1000"
+					class="scroll-section--pink"
+					duration="6000"
+					in="scroll-up"
+					out="fade"
+					in-duration="1000"
+					out-duration="1000"
+				>
+					<scroll-element
+						class="scroll-section--centre"
+						in="fade"
+						out="fade"
+						keyframes="13,17,23,25"
+					>
+						<h1>THIS</h1>
+					</scroll-element>
+					<scroll-element
+						class="scroll-section--centre"
+						in="fade"
+						out="fade"
+						keyframes="25,27,33,35"
+					>
+						<h1>IS</h1>
+					</scroll-element>
+					<scroll-element
+						class="scroll-section--centre"
+						in="fade"
+						out="fade"
+						keyframes="35,37,43,45"
+					>
+						<h1>SECTION</h1>
+					</scroll-element>
+					<scroll-element
+						class="scroll-section--centre"
+						in="fade"
+						out="fade"
+						keyframes="45,47,53,85"
+					>
+						<h1>TWO</h1>
+					</scroll-element>
+				</scroll-section>
+				<scroll-section
+					overlap="1000"
+					duration="10000"
+					in="zoom-out"
+					out="fade"
+					in-duration="1000"
+					out-duration="2000"
+				>
+					<h1>THIS IS A FULL-SCREEN BACKGROUND VIDEO</h1>
+					<scroll-element
+						class="scroll-section--full-screen-background"
+						duration="10000"
+						in="clip-rectangle"
+						out="clip-rectangle"
+						keyframes="8,30,90,100"
+					>
+						<video
+							src="https://player.vimeo.com/progressive_redirect/playback/903290686/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=a3d86dbdfce82d45c3a6f46aa6e990dad579744e895c2ca0d38a4434407dfca6"
+							preload="metadata"
+							autoplay=""
+							loop=""
+							muted=""
+							playsinline=""
+						></video>
+					</scroll-element>
+				</scroll-section>
+			</scroll-journey>
+		</div>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
 </html>
