@@ -3,11 +3,11 @@ A scrolling framework that allows you to quickly add animated elements to a page
 
 # Elements
 
-<scroll-journey />
+scroll-journey
 
 The main scroll journey wrapper. Only add one these to the page
 
-<scroll-section />
+scroll-section
 
 These are distinct full-screen views that can animate in and out and contain other child elements.
 
@@ -22,7 +22,7 @@ out - the animation out type
 in-duration - how long the in animation lasts
 out-duration - how long the out animation lasts
 
-<scroll-element />
+scroll-element
 
 Animated child elements that live inside a scroll section
 
