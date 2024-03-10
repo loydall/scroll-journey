@@ -4,7 +4,7 @@
   font-style: normal;
   line-height: 1.5;
   font-weight: 400;
-  font-size: calc(100lvh / 50);
+  font-size: calc(100lvW / 50);
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
   font-synthesis: none;
@@ -16,10 +16,11 @@
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100lvh;
 }
 
 h1 {
-  font-size: 12rem;
+  font-size: 3rem;
   line-height: 1.1;
 }
 

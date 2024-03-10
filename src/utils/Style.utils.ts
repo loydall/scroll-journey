@@ -66,8 +66,8 @@ export const setElementStyles = (
           element.setAttribute(
             "style",
             `
-                    width: ${animationComplete * -1}lvw;
-                    height: ${animationComplete * -1}lvh;
+                    width: ${(animationComplete * -1) / 2 + 50}lvw;
+                    height: ${(animationComplete * -1) / 2 + 50}lvh;
                     overflow: hidden;
                     will-change: width, height`,
           );
@@ -77,10 +77,11 @@ export const setElementStyles = (
           element.setAttribute(
             "style",
             `
-                      width: ${animationComplete}lvw;
-                      height: ${animationComplete}lvh;
+                      width: ${(animationComplete / 2) + 50}lvw;
+                      height: ${(animationComplete) / 2 + 50}lvh;
                       overflow: hidden;
-                      will-change: width, height`,
+                      opacity: ${animationComplete / 100};
+                      will-change: width, height, opacity`,
           );
           break;
         }
