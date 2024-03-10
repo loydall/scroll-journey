@@ -77,8 +77,8 @@ export const setElementStyles = (
           element.setAttribute(
             "style",
             `
-                      width: ${(animationComplete / 2) + 50}lvw;
-                      height: ${(animationComplete) / 2 + 50}lvh;
+                      width: ${animationComplete / 2 + 50}lvw;
+                      height: ${animationComplete / 2 + 50}lvh;
                       overflow: hidden;
                       opacity: ${animationComplete / 100};
                       will-change: width, height, opacity`,

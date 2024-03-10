@@ -4,7 +4,7 @@
   font-style: normal;
   line-height: 1.5;
   font-weight: 400;
-  font-size: calc(100lvW / 50);
+  font-size: calc(100lvw / 50);
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
   font-synthesis: none;

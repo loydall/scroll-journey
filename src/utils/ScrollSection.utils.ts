@@ -41,13 +41,13 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
         return {
           element: sectionElement,
           animationInStart:
-            (sectionStart + Number(keyFrames[0]) * sectionPercentage) - overlap,
+            sectionStart + Number(keyFrames[0]) * sectionPercentage - overlap,
           animationInEnd:
-            (sectionStart + Number(keyFrames[1]) * sectionPercentage) - overlap,
+            sectionStart + Number(keyFrames[1]) * sectionPercentage - overlap,
           animationOutStart:
-            (sectionStart + Number(keyFrames[2]) * sectionPercentage) - overlap,
+            sectionStart + Number(keyFrames[2]) * sectionPercentage - overlap,
           animationOutEnd:
-            (sectionStart + Number(keyFrames[3]) * sectionPercentage) - overlap,
+            sectionStart + Number(keyFrames[3]) * sectionPercentage - overlap,
           animationInType:
             (sectionElement.getAttribute("in") as AnimationType) ||
             AnimationType.None,
