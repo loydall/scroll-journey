@@ -1,5 +1,7 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     line-height: 1.5;
     font-weight: 400;
     font-size: calc(100lvh / 50);
@@ -29,6 +31,7 @@
   scroll-section {
     display: none;
     height: 100lvh;
+    max-height: 100lvh;
     width: 100lvw;
     position: fixed;
     top: 0;
@@ -41,9 +44,34 @@
     display: block;
   }
 
+  .scroll-section--blue {
+    background-color: #202045;
+  }
+
+  .scroll-section--pink {
+    background-color: #cd0d90;
+  }
+
   .scroll-section--active {
     display: block;
   }
+
+  .scroll-section--centre {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .scroll-section--full-screen-background {
+    position: fixed;
+    width: 100lvw;
+    height: 100lvh;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+
   
   
   

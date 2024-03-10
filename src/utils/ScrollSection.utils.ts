@@ -12,10 +12,11 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
       const duration: number = Number(section.getAttribute('duration')) || 0
       const animationInDuration = Number(section.getAttribute('in-duration')) || 0
       const animationOutDuration = Number(section.getAttribute('out-duration')) || 0
+      const overlap: number = Number(section.getAttribute('overlap')) || 0
   
       const sectionAnimation: SectionAnimation = {
-        animationInType: section.getAttribute('in') as AnimationType || AnimationType.none,
-        animationOutType: section.getAttribute('out') as AnimationType || AnimationType.none,
+        animationInType: section.getAttribute('in') as AnimationType || AnimationType.None,
+        animationOutType: section.getAttribute('out') as AnimationType || AnimationType.None,
         animationInDuration,
         animationOutDuration,
       }
@@ -35,20 +36,20 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
             animationInEnd: sectionStart + Number(keyFrames[1]) * sectionPercentage,
             animationOutStart: sectionStart + Number(keyFrames[2]) * sectionPercentage,
             animationOutEnd: sectionStart + Number(keyFrames[3]) * sectionPercentage,
-            animationInType:  sectionElement.getAttribute('in') as AnimationType || AnimationType.none,
-            animationOutType: sectionElement.getAttribute('out') as AnimationType || AnimationType.none
+            animationInType:  sectionElement.getAttribute('in') as AnimationType || AnimationType.None,
+            animationOutType: sectionElement.getAttribute('out') as AnimationType || AnimationType.None
           }
       })
   
       const scrollSection: ScrollSection = {
         section,
         animation: sectionAnimation,
-        start: sectionStart,
-        end: sectionStart + sectionDuration,
+        start: sectionStart - overlap,
+        end: (sectionStart + sectionDuration) - overlap,
         elements
       }
   
-      sectionStart+= sectionDuration
+      sectionStart+= (sectionDuration - overlap)
   
       return scrollSection
     })

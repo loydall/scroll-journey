@@ -1,7 +1,8 @@
 export enum AnimationType {
-    fade = 'fade',
-    zoomIn = 'zoom-in',
-    zoomOut = 'zoom-out',
-    scrollUp = 'scroll-up',
-    none = 'none'
+    Fade = 'fade',
+    ZoomIn = 'zoom-in',
+    ZoomOut = 'zoom-out',
+    ScrollUp = 'scroll-up',
+    ClipRectangle = 'clip-rectangle',
+    None = 'none',
   }
