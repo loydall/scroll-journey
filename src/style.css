@@ -1,77 +1,72 @@
 :root {
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    line-height: 1.5;
-    font-weight: 400;
-    font-size: calc(100lvh / 50);
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  
-  body {
-    margin: 0;
-    min-height: 100vh;
-  }
-  
-  h1 {
-    font-size: 12rem;
-    line-height: 1.1;
-  }
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: calc(100lvh / 50);
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  scroll-journey {
-    display: block;
-  }
+body {
+  margin: 0;
+  min-height: 100vh;
+}
 
-  scroll-section {
-    display: none;
-    height: 100lvh;
-    max-height: 100lvh;
-    width: 100lvw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    text-align: center;
-    box-sizing: border-box;
-  }
+h1 {
+  font-size: 12rem;
+  line-height: 1.1;
+}
 
-  scroll-element {
-    display: block;
-  }
+scroll-journey {
+  display: block;
+}
 
-  .scroll-section--blue {
-    background-color: #202045;
-  }
+scroll-section {
+  display: none;
+  height: 100lvh;
+  max-height: 100lvh;
+  width: 100lvw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
 
-  .scroll-section--pink {
-    background-color: #cd0d90;
-  }
+scroll-element {
+  display: block;
+}
 
-  .scroll-section--active {
-    display: block;
-  }
+.scroll-section--blue {
+  background-color: #202045;
+}
 
-  .scroll-section--centre {
-    position: absolute;
-    width: 100vw;
-    text-align: center;
-  }
+.scroll-section--pink {
+  background-color: #cd0d90;
+}
 
-  .scroll-section--full-screen-background {
-    position: fixed;
-    width: 100lvw;
-    height: 100lvh;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-  }
+.scroll-section--active {
+  display: block;
+}
 
-  
-  
-  
+.scroll-section--centre {
+  position: absolute;
+  width: 100vw;
+  text-align: center;
+}
+
+.scroll-section--full-screen-background {
+  position: fixed;
+  width: 100lvw;
+  height: 100lvh;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}

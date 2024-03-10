@@ -1,4 +1,4 @@
 export enum AnimationDirection {
-    In = 'in',
-    Out = 'out'
+  In = "in",
+  Out = "out",
 }
