@@ -19,10 +19,19 @@ body {
   min-height: 100lvh;
 }
 
+/*
+Où est le BEM?
+*/
+
 h1 {
   font-size: 3rem;
   line-height: 1.1;
 }
+
+/* 
+I'm not sure I like relying on custom HTML tags like this. I'll probably switch
+this for class selectors to select/initialise from. 
+*/
 
 scroll-journey {
   display: block;
@@ -43,6 +52,10 @@ scroll-section {
 scroll-element {
   display: block;
 }
+
+/*
+This is all bit crap but gets us up and running
+*/
 
 .scroll-section--blue {
   background-color: #202045;
