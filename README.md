@@ -27,7 +27,7 @@ duration - how long (how far the user scrolls) we show the section for
 
 Animated child elements that live inside a scroll section
 
-####P roperties:
+#### Properties:
 
 **in** - the animation in type fade, zoom etc..
 **out** - the animation out type
