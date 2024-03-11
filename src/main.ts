@@ -2,7 +2,7 @@ import { AnimationDirection } from './models/AnimationDirection.model'
 import { ScrollElement } from './models/ScrollElement.model'
 import { ScrollSection } from './models/ScrollSection.model'
 
-import './style.css'
+import './scroll-journey.css'
 import { registerSections } from './utils/ScrollSection.utils'
 import { setElementStyles } from './utils/Style.utils'
 
@@ -21,6 +21,7 @@ const applySectionAnimation = (
 			scrollSection.section,
 			animationInComplete,
 			AnimationDirection.In,
+			scrollSection.animation.scale,
 		)
 	}
 
@@ -30,6 +31,7 @@ const applySectionAnimation = (
 			scrollSection.section,
 			animationOutComplete,
 			AnimationDirection.Out,
+			scrollSection.animation.scale,
 		)
 	}
 }
@@ -44,6 +46,7 @@ const applyElementAnimations = (scrollElements: Array<ScrollElement>) => {
 				scrollElement.element,
 				animationInComplete,
 				AnimationDirection.In,
+				scrollElement.scale,
 			)
 		}
 		if (
@@ -60,6 +63,7 @@ const applyElementAnimations = (scrollElements: Array<ScrollElement>) => {
 				scrollElement.element,
 				animationInComplete,
 				AnimationDirection.In,
+				scrollElement.scale,
 			)
 		}
 		if (
@@ -72,6 +76,7 @@ const applyElementAnimations = (scrollElements: Array<ScrollElement>) => {
 				scrollElement.element,
 				animationInComplete,
 				AnimationDirection.In,
+				scrollElement.scale,
 			)
 		}
 
@@ -90,6 +95,7 @@ const applyElementAnimations = (scrollElements: Array<ScrollElement>) => {
 				scrollElement.element,
 				animationOutComplete,
 				AnimationDirection.Out,
+				scrollElement.scale,
 			)
 		}
 		if (targetY > scrollElement.animationOutEnd) {
@@ -99,6 +105,7 @@ const applyElementAnimations = (scrollElements: Array<ScrollElement>) => {
 				scrollElement.element,
 				animationOutComplete,
 				AnimationDirection.Out,
+				scrollElement.scale,
 			)
 		}
 	})

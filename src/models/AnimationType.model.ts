@@ -5,4 +5,5 @@ export enum AnimationType {
 	ScrollUp = 'scroll-up',
 	ClipRectangle = 'clip-rectangle',
 	None = 'none',
+	ScrollLeft = 'scroll-left'
 }

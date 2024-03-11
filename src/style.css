@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
 	font-family: 'Nunito', sans-serif;
 	font-optical-sizing: auto;
@@ -26,6 +30,10 @@ Où est le BEM?
 h1 {
 	font-size: 3rem;
 	line-height: 1.1;
+}
+
+video {
+  max-width: none;
 }
 
 /* 
@@ -83,4 +91,33 @@ This is all bit crap but gets us up and running
 	left: 50%;
 	z-index: -1;
 	transform: translate(-50%, -50%);
+}
+
+.full-screen-background-image {
+  min-width: 100lvw;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.below-the-fold {
+  position: absolute;
+  top: 100lvh;
+}
+
+.align-left {
+  text-align: left;
+}
+
+
+.gallery {
+  display: flex;
+
+}
+
+.gallery img {
+  height: 60lvh;
+  width: auto;
+  margin: 0 2rem
 }

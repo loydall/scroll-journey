@@ -8,4 +8,5 @@ export interface ScrollElement {
 	animationOutEnd: number
 	animationInType: AnimationType
 	animationOutType: AnimationType
+	scale: number
 }

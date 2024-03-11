@@ -23,11 +23,12 @@
 					in-duration="100"
 					out-duration="1000"
 				>
-					<h1>THIS IS SCROLL-JOURNEY</h1>
+					<h1 class="p-6">THIS IS SCROLL-JOURNEY</h1>
 					<scroll-element
 						in="fade"
 						out="fade"
 						keyframes="20,25,50,55"
+            class="px-6 text-2xl"
 					>
 						A
 					</scroll-element>
@@ -35,6 +36,7 @@
 						in="fade"
 						out="fade"
 						keyframes="30,35,60,65"
+            class="px-6 text-2xl"
 					>
 						SCROLL-BASED
 					</scroll-element>
@@ -42,6 +44,7 @@
 						in="fade"
 						out="fade"
 						keyframes="40,45,70,75"
+            class="px-6 text-2xl"
 					>
 						ANIMATION
 					</scroll-element>
@@ -49,6 +52,7 @@
 						in="fade"
 						out="fade"
 						keyframes="50,55,80,85"
+            class="px-6 text-2xl"
 					>
 						FRAMEWORK
 					</scroll-element>
@@ -68,7 +72,7 @@
 						out="fade"
 						keyframes="13,17,23,25"
 					>
-						<h1>THIS</h1>
+						<h1 class="p-6">THIS</h1>
 					</scroll-element>
 					<scroll-element
 						class="scroll-section--centre"
@@ -76,7 +80,7 @@
 						out="fade"
 						keyframes="25,27,33,35"
 					>
-						<h1>IS</h1>
+						<h1 class="p-6">IS</h1>
 					</scroll-element>
 					<scroll-element
 						class="scroll-section--centre"
@@ -84,7 +88,7 @@
 						out="fade"
 						keyframes="35,37,43,45"
 					>
-						<h1>SECTION</h1>
+						<h1 class="p-6">SECTION</h1>
 					</scroll-element>
 					<scroll-element
 						class="scroll-section--centre"
@@ -92,24 +96,24 @@
 						out="fade"
 						keyframes="45,47,53,85"
 					>
-						<h1>TWO</h1>
+						<h1 class="p-6">TWO</h1>
 					</scroll-element>
 				</scroll-section>
 				<scroll-section
 					overlap="1000"
-					duration="10000"
+					duration="2000"
 					in="zoom-out"
 					out="fade"
 					in-duration="1000"
 					out-duration="2000"
 				>
-					<h1>THIS IS A FULL-SCREEN BACKGROUND VIDEO</h1>
+					<h1 class="p-6">THIS IS A FULL-SCREEN BACKGROUND VIDEO</h1>
 					<scroll-element
 						class="scroll-section--full-screen-background"
-						duration="10000"
-						in="clip-rectangle"
-						out="clip-rectangle"
-						keyframes="8,30,90,100"
+						duration="2000"
+						in="fade"
+						out="fade"
+						keyframes="20,35,75,90"
 					>
 						<video
 							src="https://player.vimeo.com/progressive_redirect/playback/903290686/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=a3d86dbdfce82d45c3a6f46aa6e990dad579744e895c2ca0d38a4434407dfca6"
@@ -121,6 +125,38 @@
 						></video>
 					</scroll-element>
 				</scroll-section>
+        <scroll-section
+					overlap="1000"
+					duration="7000"
+					in="fade"
+					out="fade"
+					in-duration="1000"
+					out-duration="1000"
+				>
+          <scroll-element in="fade" out="scroll-up" keyframes="0,0,0,100" >
+            <img class="full-screen-background-image" src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004714.png" />
+          </scroll-element>
+          <scroll-element out="scroll-up" keyframes="0,0,0,100" scale="3" >
+            <h1 class="below-the-fold align-left p-6">Use the scale property on different elements to create a parallax effect</h1>
+          </scroll-element>
+        </scroll-section>
+        <scroll-section class="bg-white" overlap="5500" in="scroll-up" in-duration="1500" duration="10000">
+          <scroll-element in="fade"  keyframes="7,15,100,100">
+            <h1 class="text-slate-900 align-left p-6">Gallery</h1>
+          </scroll-element>
+          <scroll-element class="gallery" in="fade" out="scroll-left" scale="1.8" keyframes="7,15,15,100">
+              <img src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004545.png" />
+              <img src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004571.png" />
+              <img src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004596.png" />
+              <img src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004695.png" />
+              <img src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004914.png" />
+              <img src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004865.png" />
+              <img src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004923.png" />
+              <img src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004714.png" />
+              <img src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004575.png" />
+
+          </scroll-element>
+        </scroll-section>
 			</scroll-journey>
 		</div>
 		<script type="module" src="/src/main.ts"></script>

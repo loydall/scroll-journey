@@ -6,6 +6,7 @@ export const setElementStyles = (
 	element: Element,
 	animationComplete: number,
 	animationDirection: AnimationDirection,
+  scale: number = 1
 ) => {
 	switch (animationType) {
 		case AnimationType.Fade: {
@@ -46,14 +47,14 @@ export const setElementStyles = (
 				case AnimationDirection.Out: {
 					element.setAttribute(
 						'style',
-						`transform: translateY(${animationComplete * -1}lvh); will-change: transform`,
+						`transform: translateY(${animationComplete * -scale}lvh); will-change: transform`,
 					)
 					break
 				}
 				case AnimationDirection.In: {
 					element.setAttribute(
 						'style',
-						`transform: translateY(${100 - animationComplete}lvh); will-change: transform`,
+						`transform: translateY(${(100 - animationComplete) * scale}lvh); will-change: transform`,
 					)
 					break
 				}
@@ -88,5 +89,11 @@ export const setElementStyles = (
 			}
 			break
 		}
+    case AnimationType.ScrollLeft: {
+      element.setAttribute(
+        'style',
+        `transform: translateX(${(-animationComplete) * scale}%); will-change: transform`,
+      )
+    }
 	}
 }

@@ -5,4 +5,5 @@ export interface SectionAnimation {
 	animationOutType: AnimationType
 	animationInDuration: number
 	animationOutDuration: number
+	scale: number
 }
