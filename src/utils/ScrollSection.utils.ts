@@ -2,6 +2,7 @@ import { AnimationType } from '../models/AnimationType.model'
 import { ScrollElement } from '../models/ScrollElement.model'
 import { ScrollSection } from '../models/ScrollSection.model'
 import { SectionAnimation } from '../models/SectionAnimation.model'
+import { applyElementAnimations, applySectionAnimation } from './Animation.utils'
 
 export const registerSections = (target: Element): Array<ScrollSection> => {
 	const scrollSections = Array.from(target.querySelectorAll('scroll-section'))
@@ -85,5 +86,52 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
 		sectionStart += sectionDuration - overlap
 
 		return scrollSection
+	})
+}
+
+export const updateScrollSections = (scrollSections: Array<ScrollSection>, targetY: number) => {
+	scrollSections.forEach((scrollSection: ScrollSection) => {
+		if (scrollSection.end < targetY) {
+			applySectionAnimation(100, 100, scrollSection)
+		}
+		if (scrollSection.start > targetY) {
+			applySectionAnimation(0, 0, scrollSection)
+		}
+		applyElementAnimations(scrollSection.elements, targetY)
+
+		if (scrollSection.start <= targetY && scrollSection.end >= targetY) {
+			if (!scrollSection.isActive) {
+				scrollSection.isActive = true
+				scrollSection.section.classList.add('scroll-section--active')
+			}
+			const animationInComplete =
+				targetY <
+				scrollSection.start +
+					scrollSection.animation.animationInDuration
+					? ((targetY - scrollSection.start) /
+							scrollSection.animation.animationInDuration) *
+						100
+					: 100
+			const animationOutComplete =
+				targetY >
+				scrollSection.end - scrollSection.animation.animationOutDuration
+					? ((targetY -
+							(scrollSection.end -
+								scrollSection.animation.animationOutDuration)) /
+							scrollSection.animation.animationOutDuration) *
+						100
+					: 0
+			applySectionAnimation(
+				animationInComplete,
+				animationOutComplete,
+				scrollSection,
+			)
+			return
+		}
+
+		if ((scrollSection.isActive = true)) {
+			scrollSection.isActive = false
+			scrollSection.section.classList.remove('scroll-section--active')
+		}
 	})
 }

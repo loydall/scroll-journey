@@ -1,165 +1,10 @@
-import { AnimationDirection } from './models/AnimationDirection.model'
-import { ScrollElement } from './models/ScrollElement.model'
 import { ScrollSection } from './models/ScrollSection.model'
-
-import './scroll-journey.css'
-import { registerSections } from './utils/ScrollSection.utils'
-import { setElementStyles } from './utils/Style.utils'
+import { registerSections, updateScrollSections } from './utils/ScrollSection.utils'
 
 let scrollSections: Array<ScrollSection>
 let targetY: number = window.scrollY
 const easing = 25
 const maxSpeed = 70
-
-const applySectionAnimation = (
-	animationInComplete: number,
-	animationOutComplete: number,
-	scrollSection: ScrollSection,
-) => {
-	if (!scrollSection.isActive) return
-	if (animationInComplete > 0 && animationInComplete <= 100) {
-		setElementStyles(
-			scrollSection.animation.animationInType,
-			scrollSection.section,
-			animationInComplete,
-			AnimationDirection.In,
-			scrollSection.animation.scale,
-		)
-	}
-
-	if (animationOutComplete > 0 && animationOutComplete <= 100) {
-		setElementStyles(
-			scrollSection.animation.animationOutType,
-			scrollSection.section,
-			animationOutComplete,
-			AnimationDirection.Out,
-			scrollSection.animation.scale,
-		)
-	}
-}
-
-const applyElementAnimations = (scrollElements: Array<ScrollElement>) => {
-	scrollElements.forEach((scrollElement: ScrollElement) => {
-		let animationInComplete = 0
-
-		if (targetY < scrollElement.animationInStart) {
-			setElementStyles(
-				scrollElement.animationInType,
-				scrollElement.element,
-				animationInComplete,
-				AnimationDirection.In,
-				scrollElement.scale,
-			)
-		}
-		if (
-			targetY >= scrollElement.animationInStart &&
-			targetY <= scrollElement.animationInEnd
-		) {
-			animationInComplete =
-				((targetY - scrollElement.animationInStart) /
-					(scrollElement.animationInEnd -
-						scrollElement.animationInStart)) *
-				100
-			setElementStyles(
-				scrollElement.animationInType,
-				scrollElement.element,
-				animationInComplete,
-				AnimationDirection.In,
-				scrollElement.scale,
-			)
-		}
-		if (
-			targetY > scrollElement.animationInEnd &&
-			targetY < scrollElement.animationOutStart
-		) {
-			animationInComplete = 100
-			setElementStyles(
-				scrollElement.animationInType,
-				scrollElement.element,
-				animationInComplete,
-				AnimationDirection.In,
-				scrollElement.scale,
-			)
-		}
-
-		let animationOutComplete = 0
-		if (
-			targetY >= scrollElement.animationOutStart &&
-			targetY <= scrollElement.animationOutEnd
-		) {
-			animationOutComplete =
-				((targetY - scrollElement.animationOutStart) /
-					(scrollElement.animationOutEnd -
-						scrollElement.animationOutStart)) *
-				100
-			setElementStyles(
-				scrollElement.animationOutType,
-				scrollElement.element,
-				animationOutComplete,
-				AnimationDirection.Out,
-				scrollElement.scale,
-			)
-		}
-		if (targetY > scrollElement.animationOutEnd) {
-			animationOutComplete = 100
-			setElementStyles(
-				scrollElement.animationOutType,
-				scrollElement.element,
-				animationOutComplete,
-				AnimationDirection.Out,
-				scrollElement.scale,
-			)
-		}
-	})
-}
-
-const updateScrollSections = () => {
-	scrollSections.forEach((scrollSection: ScrollSection) => {
-		if (scrollSection.end < targetY) {
-			applySectionAnimation(100, 100, scrollSection)
-		}
-		if (scrollSection.start > targetY) {
-			applySectionAnimation(0, 0, scrollSection)
-		}
-		applyElementAnimations(scrollSection.elements)
-
-		if (scrollSection.start <= targetY && scrollSection.end >= targetY) {
-			if (!scrollSection.isActive) {
-				scrollSection.isActive = true
-				scrollSection.section.classList.add('scroll-section--active')
-			}
-			const animationInComplete =
-				targetY <
-				scrollSection.start +
-					scrollSection.animation.animationInDuration
-					? ((targetY - scrollSection.start) /
-							scrollSection.animation.animationInDuration) *
-						100
-					: 100
-			const animationOutComplete =
-				targetY >
-				scrollSection.end - scrollSection.animation.animationOutDuration
-					? ((targetY -
-							(scrollSection.end -
-								scrollSection.animation.animationOutDuration)) /
-							scrollSection.animation.animationOutDuration) *
-						100
-					: 0
-			applySectionAnimation(
-				animationInComplete,
-				animationOutComplete,
-				scrollSection,
-			)
-			return
-		}
-
-		if ((scrollSection.isActive = true)) {
-			scrollSection.isActive = false
-			scrollSection.section.classList.remove('scroll-section--active')
-		}
-	})
-}
-
 let isScrolling: boolean = false
 
 const handleScroll = () => {
@@ -177,7 +22,7 @@ const handleScroll = () => {
 	if (targetY > scrollY) {
 		targetY = targetY - jump
 	}
-	updateScrollSections()
+	updateScrollSections(scrollSections, targetY)
 	requestAnimationFrame(handleScroll)
 }
 
@@ -200,7 +45,7 @@ const scrollJourney = () => {
 		'style',
 		`height: ${scrollSections[scrollSections.length - 1].end}px;`,
 	)
-	updateScrollSections()
+	updateScrollSections(scrollSections, 0)
 	window.onscroll = shouldHandleScroll
 }
 
