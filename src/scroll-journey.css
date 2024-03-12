@@ -544,9 +544,24 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.p-12 {
+  padding: 3rem;
+}
+
+.p-24 {
+  padding: 6rem;
+}
+
+.p-36 {
+  padding: 9rem;
 }
 
 .p-6 {
@@ -558,29 +573,57 @@ video {
   padding-right: 1.5rem;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-.text-slate-900 {
-  --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity));
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
 }
 
 :root {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 700;
   font-size: calc(100lvw / 50);
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000000;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.noto {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+	  "wdth" 100;
 }
 
 body {
@@ -649,6 +692,18 @@ This is all bit crap but gets us up and running
   text-align: center;
 }
 
+.earth {
+  background-color: #33221a;
+}
+
+.earth .primary {
+  color: #b26938;
+}
+
+.earth .accent {
+  color: #fdb913;
+}
+
 .scroll-section--full-screen-background {
   position: fixed;
   width: 100lvw;
@@ -661,7 +716,7 @@ This is all bit crap but gets us up and running
 
 .full-screen-background-image {
   min-width: 100lvw;
-  height: auto;
+  min-height: 100lvh;
   position: absolute;
   left: 0;
   top: 0;
@@ -678,10 +733,56 @@ This is all bit crap but gets us up and running
 
 .gallery {
   display: flex;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .gallery img {
   height: 60lvh;
   width: auto;
   margin: 0 2rem
+}
+
+.dark-green {
+  color: #fff;
+  background-color: #1F2833;
+}
+
+@media (min-width: 768px) {
+  .md\:p-12 {
+    padding: 3rem;
+  }
+
+  .md\:p-24 {
+    padding: 6rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-3\/5 {
+    width: 60%;
+  }
+
+  .lg\:p-3 {
+    padding: 0.75rem;
+  }
+
+  .lg\:p-6 {
+    padding: 1.5rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }

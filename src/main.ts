@@ -8,13 +8,15 @@ import { setElementStyles } from './utils/Style.utils'
 
 let scrollSections: Array<ScrollSection>
 let targetY: number = window.scrollY
-const easing = 20
+const easing = 25
+const maxSpeed = 70
 
 const applySectionAnimation = (
 	animationInComplete: number,
 	animationOutComplete: number,
 	scrollSection: ScrollSection,
 ) => {
+	if(!scrollSection.isActive) return
 	if (animationInComplete > 0 && animationInComplete <= 100) {
 		setElementStyles(
 			scrollSection.animation.animationInType,
@@ -123,10 +125,9 @@ const updateScrollSections = () => {
 
 		if (scrollSection.start <= targetY && scrollSection.end >= targetY) {
 			if (
-				!scrollSection.section.classList.contains(
-					'scroll-section--active',
-				)
+				!scrollSection.isActive
 			) {
+				scrollSection.isActive = true
 				scrollSection.section.classList.add('scroll-section--active')
 			}
 			const animationInComplete =
@@ -155,8 +156,9 @@ const updateScrollSections = () => {
 		}
 
 		if (
-			scrollSection.section.classList.contains('scroll-section--active')
+			scrollSection.isActive = true
 		) {
+			scrollSection.isActive = false
 			scrollSection.section.classList.remove('scroll-section--active')
 		}
 	})
@@ -172,7 +174,7 @@ const handleScroll = () => {
 	}
 
 	const distance = Math.abs(targetY - scrollY)
-	const jump = Math.ceil(distance / easing)
+	const jump = Math.min(Math.ceil(distance / easing), maxSpeed)
 	if (targetY < scrollY) {
 		targetY = targetY + jump
 	}

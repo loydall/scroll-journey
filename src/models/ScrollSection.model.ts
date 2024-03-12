@@ -7,4 +7,5 @@ export interface ScrollSection {
 	animation: SectionAnimation
 	section: Element
 	elements: Array<ScrollElement>
+	isActive: boolean
 }

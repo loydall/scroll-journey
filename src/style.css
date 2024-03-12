@@ -2,19 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-	font-family: 'Nunito', sans-serif;
+	font-family: "Oswald", sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
 	line-height: 1.5;
-	font-weight: 400;
+	font-weight: 700;
 	font-size: calc(100lvw / 50);
 	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	background-color: #000000;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+.noto {
+	font-family: "Noto Serif", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings:
+	  "wdth" 100;
 }
 
 body {
@@ -22,6 +31,8 @@ body {
 	min-height: 100vh;
 	min-height: 100lvh;
 }
+
+
 
 /*
 Où est le BEM?
@@ -83,6 +94,18 @@ This is all bit crap but gets us up and running
 	text-align: center;
 }
 
+.earth {
+	background-color: #33221a;
+}
+
+.earth .primary {
+	color: #b26938;;
+}
+
+.earth .accent {
+	color: #fdb913;
+}
+
 .scroll-section--full-screen-background {
 	position: fixed;
 	width: 100lvw;
@@ -95,7 +118,7 @@ This is all bit crap but gets us up and running
 
 .full-screen-background-image {
   min-width: 100lvw;
-  height: auto;
+  min-height: 100lvh;
   position: absolute;
   left: 0;
   top: 0;
@@ -113,11 +136,16 @@ This is all bit crap but gets us up and running
 
 .gallery {
   display: flex;
-
+	width: max-content;
 }
 
 .gallery img {
   height: 60lvh;
   width: auto;
   margin: 0 2rem
+}
+
+.dark-green {
+	color: #fff;
+	background-color: #1F2833;
 }

@@ -78,6 +78,7 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
 			start: sectionStart - overlap,
 			end: sectionStart + sectionDuration - overlap,
 			elements,
+			isActive: false
 		}
 
 		sectionStart += sectionDuration - overlap

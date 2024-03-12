@@ -92,8 +92,15 @@ export const setElementStyles = (
     case AnimationType.ScrollLeft: {
       element.setAttribute(
         'style',
-        `transform: translateX(${(-animationComplete) * scale}%); will-change: transform`,
+        `transform: translateX(calc(${(-animationComplete) * scale}% + (${animationComplete} * 1lvw))); width: max-content; will-change: transform`,
       )
+	  break
     }
+	case AnimationType.Rotate: {
+		element.setAttribute(
+			'style',
+			`transform: rotate(${(-animationComplete) * scale}deg); will-change: transform`,
+		  )
+	}
 	}
 }
