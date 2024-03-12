@@ -15,7 +15,7 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
 		const animationOutDuration =
 			Number(section.getAttribute('out-duration')) || 0
 		const overlap: number = Number(section.getAttribute('overlap')) || 0
-    const scale: number = Number(section.getAttribute('scale')) || 1
+		const scale: number = Number(section.getAttribute('scale')) || 1
 
 		const sectionAnimation: SectionAnimation = {
 			animationInType:
@@ -26,7 +26,7 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
 				AnimationType.None,
 			animationInDuration,
 			animationOutDuration,
-      scale
+			scale,
 		}
 
 		const sectionDuration =
@@ -39,7 +39,8 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
 			(sectionElement: Element): ScrollElement => {
 				const elementFrames: string =
 					sectionElement.getAttribute('keyframes') || ''
-        const elementScale = Number(sectionElement.getAttribute('scale')) || 1
+				const elementScale =
+					Number(sectionElement.getAttribute('scale')) || 1
 				const keyFrames = elementFrames.split(',')
 				const sectionPercentage = sectionDuration / 100
 
@@ -67,7 +68,7 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
 					animationOutType:
 						(sectionElement.getAttribute('out') as AnimationType) ||
 						AnimationType.None,
-          scale: elementScale,
+					scale: elementScale,
 				}
 			},
 		)
@@ -78,7 +79,7 @@ export const registerSections = (target: Element): Array<ScrollSection> => {
 			start: sectionStart - overlap,
 			end: sectionStart + sectionDuration - overlap,
 			elements,
-			isActive: false
+			isActive: false,
 		}
 
 		sectionStart += sectionDuration - overlap

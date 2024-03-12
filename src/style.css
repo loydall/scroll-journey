@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-	font-family: "Oswald", sans-serif;
+	font-family: 'Oswald', sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
 	line-height: 1.5;
@@ -18,12 +17,11 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 .noto {
-	font-family: "Noto Serif", serif;
+	font-family: 'Noto Serif', serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
-	font-variation-settings:
-	  "wdth" 100;
+	font-variation-settings: 'wdth' 100;
 }
 
 body {
@@ -31,8 +29,6 @@ body {
 	min-height: 100vh;
 	min-height: 100lvh;
 }
-
-
 
 /*
 Où est le BEM?
@@ -44,7 +40,7 @@ h1 {
 }
 
 video {
-  max-width: none;
+	max-width: none;
 }
 
 /* 
@@ -99,7 +95,7 @@ This is all bit crap but gets us up and running
 }
 
 .earth .primary {
-	color: #b26938;;
+	color: #b26938;
 }
 
 .earth .accent {
@@ -117,35 +113,34 @@ This is all bit crap but gets us up and running
 }
 
 .full-screen-background-image {
-  min-width: 100lvw;
-  min-height: 100lvh;
-  position: absolute;
-  left: 0;
-  top: 0;
+	min-width: 100lvw;
+	min-height: 100lvh;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 .below-the-fold {
-  position: absolute;
-  top: 100lvh;
+	position: absolute;
+	top: 100lvh;
 }
 
 .align-left {
-  text-align: left;
+	text-align: left;
 }
 
-
 .gallery {
-  display: flex;
+	display: flex;
 	width: max-content;
 }
 
 .gallery img {
-  height: 60lvh;
-  width: auto;
-  margin: 0 2rem
+	height: 60lvh;
+	width: auto;
+	margin: 0 2rem;
 }
 
 .dark-green {
 	color: #fff;
-	background-color: #1F2833;
+	background-color: #1f2833;
 }

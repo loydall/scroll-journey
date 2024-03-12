@@ -16,7 +16,7 @@ const applySectionAnimation = (
 	animationOutComplete: number,
 	scrollSection: ScrollSection,
 ) => {
-	if(!scrollSection.isActive) return
+	if (!scrollSection.isActive) return
 	if (animationInComplete > 0 && animationInComplete <= 100) {
 		setElementStyles(
 			scrollSection.animation.animationInType,
@@ -124,9 +124,7 @@ const updateScrollSections = () => {
 		applyElementAnimations(scrollSection.elements)
 
 		if (scrollSection.start <= targetY && scrollSection.end >= targetY) {
-			if (
-				!scrollSection.isActive
-			) {
+			if (!scrollSection.isActive) {
 				scrollSection.isActive = true
 				scrollSection.section.classList.add('scroll-section--active')
 			}
@@ -155,9 +153,7 @@ const updateScrollSections = () => {
 			return
 		}
 
-		if (
-			scrollSection.isActive = true
-		) {
+		if ((scrollSection.isActive = true)) {
 			scrollSection.isActive = false
 			scrollSection.section.classList.remove('scroll-section--active')
 		}

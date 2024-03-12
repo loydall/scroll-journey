@@ -5,12 +5,17 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Scroll Journey</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-</head>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
 	<body>
 		<div id="app">
 			<scroll-journey>
@@ -24,12 +29,15 @@
 				>
 					<h1 class="p-36 text-2xl md:p-24 lg:p-6">
 						<span class="block noto">THIS IS</span>
-						<span class="text-6xl block pt-4 lg:p-3">SCROLL-JOURNEY</span></h1>
+						<span class="text-6xl block pt-4 lg:p-3"
+							>SCROLL-JOURNEY</span
+						>
+					</h1>
 					<scroll-element
 						in="fade"
 						out="fade"
 						keyframes="15,25,85,90"
-            class="px-6 text-6xl md:text-2xl noto"
+						class="px-6 text-6xl md:text-2xl noto"
 					>
 						A
 					</scroll-element>
@@ -37,7 +45,7 @@
 						in="fade"
 						out="fade"
 						keyframes="25,35,85,90"
-            class="px-6 text-6xl md:text-2xl noto"
+						class="px-6 text-6xl md:text-2xl noto"
 					>
 						SCROLL-BASED
 					</scroll-element>
@@ -45,7 +53,7 @@
 						in="fade"
 						out="fade"
 						keyframes="35,45,85,90"
-            class="px-6 text-6xl md:text-2xl noto"
+						class="px-6 text-6xl md:text-2xl noto"
 					>
 						ANIMATION
 					</scroll-element>
@@ -53,7 +61,7 @@
 						in="fade"
 						out="fade"
 						keyframes="45,55,90,100"
-            class="px-6 text-6xl md:text-2xl noto"
+						class="px-6 text-6xl md:text-2xl noto"
 					>
 						FRAMEWORK
 					</scroll-element>
@@ -108,7 +116,9 @@
 					in-duration="3000"
 					out-duration="2000"
 				>
-					<h1 class="p-24 md:p-12 text-5xl md:text-3xl">THIS IS A FULL-SCREEN BACKGROUND VIDEO</h1>
+					<h1 class="p-24 md:p-12 text-5xl md:text-3xl">
+						THIS IS A FULL-SCREEN BACKGROUND VIDEO
+					</h1>
 					<scroll-element
 						class="scroll-section--full-screen-background"
 						duration="2000"
@@ -126,7 +136,7 @@
 						></video>
 					</scroll-element>
 				</scroll-section>
-        <scroll-section
+				<scroll-section
 					overlap="1000"
 					duration="4000"
 					in="fade"
@@ -134,43 +144,174 @@
 					in-duration="1000"
 					out-duration="1000"
 				>
-          <scroll-element in="fade" out="scroll-up" scale="1.2" keyframes="0,0,0,100" >
-            <img class="full-screen-background-image" src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004714.png" />
-          </scroll-element>
-          <scroll-element out="scroll-up" keyframes="0,0,0,20">
-            <h1 class="below-the-fold align-left p-6 noto text-5xl md:text-3xl lg:w-3/5">Use the scale property on different elements to create a parallax effect</h1>
-          </scroll-element>
-        </scroll-section>
-        <scroll-section class="dark-green" overlap="4700" in="scroll-up" out="scroll-up" in-duration="1500" out-duration="1500" duration="5000">
-          <scroll-element in="fade"  keyframes="7,15,100,100">
-            <h1 class="align-left p-12 lg:p-6 noto text-4xl lg:text-2xl">Animate using scroll-left gives you an instant gallery...</h1>
-          </scroll-element>
-          <scroll-element class="gallery" in="fade" out="scroll-left" keyframes="7,15,19,80">
-              <img loading="lazy" alt="John Loydall Photography" src="1.webp" />
-              <img loading="lazy" alt="John Loydall Photography" src="4.webp" />
-              <img loading="lazy" alt="John Loydall Photography" src="8.webp" />
-              <img loading="lazy" alt="John Loydall Photography" src="9.webp" />
-              <img loading="lazy" alt="John Loydall Photography" src="10.webp" />
-              <img loading="lazy" alt="John Loydall Photography" src="13.webp" />
-              <img loading="lazy" alt="John Loydall Photography" src="18.webp" />
-              <img loading="lazy" alt="John Loydall Photography" src="21.webp" />
-              <img loading="lazy" alt="John Loydall Photography" src="22.webp" />
-			  <img loading="lazy" alt="John Loydall Photography" src="23.webp" />
-          </scroll-element>
-        </scroll-section>
-		<scroll-section
-		class="earth"
-		overlap="4700"
-		in="scroll-up"
-		out="scroll-up"
-		in-duration="1500"
-		out-duration="1500"
-		duration="5000">
-			<scroll-element class="p-36 noto text-8xl primary" in="scroll-left"  keyframes="20,90,90,90">
-				N<scroll-element class="inline-block accent" in="rotate" scale="20" keyframes="20,100,100,100">e</scroll-element>sting scroll <scroll-element class="inline-block accent" in="rotate" scale="20" keyframes="20,100,100,100">e</scroll-element>l<scroll-element class="inline-block accent" in="rotate" scale="5" keyframes="20,100,100,100">e</scroll-element>m<scroll-element class="inline-block accent" in="rotate" scale="17" keyframes="20,100,100,100">e</scroll-element>nts with diff<scroll-element class="inline-block accent" in="rotate" scale="23" keyframes="20,100,100,100">e</scroll-element>r<scroll-element class="inline-block accent" in="rotate" scale="34" keyframes="20,100,100,100">e</scroll-element>nt animation typ<scroll-element class="inline-block accent" in="rotate" scale="10" keyframes="20,100,100,100">e</scroll-element>s allows for mor<scroll-element class="inline-block accent" in="rotate" scale="25" keyframes="20,100,100,100">e</scroll-element> compl<scroll-element class="inline-block accent" in="rotate" scale="15" keyframes="20,100,100,100">e</scroll-element>x animations.
-				
-			</scroll-element>	
-		</scroll-section>
+					<scroll-element
+						in="fade"
+						out="scroll-up"
+						scale="1.2"
+						keyframes="0,0,0,100"
+					>
+						<img
+							class="full-screen-background-image"
+							src="https://johnloydall.co.uk/wp-content/uploads/2024/03/R0004714.png"
+						/>
+					</scroll-element>
+					<scroll-element out="scroll-up" keyframes="0,0,0,20">
+						<h1
+							class="below-the-fold align-left p-6 noto text-5xl md:text-3xl lg:w-3/5"
+						>
+							Use the scale property on different elements to
+							create a parallax effect
+						</h1>
+					</scroll-element>
+				</scroll-section>
+				<scroll-section
+					class="dark-green"
+					overlap="4700"
+					in="scroll-up"
+					out="scroll-up"
+					in-duration="1500"
+					out-duration="1500"
+					duration="5000"
+				>
+					<scroll-element in="fade" keyframes="7,15,100,100">
+						<h1
+							class="align-left p-12 lg:p-6 noto text-4xl lg:text-2xl"
+						>
+							Animate using scroll-left gives you an instant
+							gallery...
+						</h1>
+					</scroll-element>
+					<scroll-element
+						class="gallery"
+						in="fade"
+						out="scroll-left"
+						keyframes="7,15,19,80"
+					>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="1.webp"
+						/>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="4.webp"
+						/>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="8.webp"
+						/>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="9.webp"
+						/>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="10.webp"
+						/>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="13.webp"
+						/>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="18.webp"
+						/>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="21.webp"
+						/>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="22.webp"
+						/>
+						<img
+							loading="lazy"
+							alt="John Loydall Photography"
+							src="23.webp"
+						/>
+					</scroll-element>
+				</scroll-section>
+				<scroll-section
+					class="earth"
+					overlap="4700"
+					in="scroll-up"
+					out="scroll-up"
+					in-duration="1500"
+					out-duration="1500"
+					duration="5000"
+				>
+					<scroll-element
+						class="p-36 noto text-8xl primary"
+						in="scroll-left"
+						keyframes="20,90,90,90"
+					>
+						N<scroll-element
+							class="inline-block accent"
+							in="rotate"
+							scale="20"
+							keyframes="20,100,100,100"
+							>e</scroll-element
+						>sting scroll
+						<scroll-element
+							class="inline-block accent"
+							in="rotate"
+							scale="20"
+							keyframes="20,100,100,100"
+							>e</scroll-element
+						>l<scroll-element
+							class="inline-block accent"
+							in="rotate"
+							scale="5"
+							keyframes="20,100,100,100"
+							>e</scroll-element
+						>m<scroll-element
+							class="inline-block accent"
+							in="rotate"
+							scale="17"
+							keyframes="20,100,100,100"
+							>e</scroll-element
+						>nts with diff<scroll-element
+							class="inline-block accent"
+							in="rotate"
+							scale="23"
+							keyframes="20,100,100,100"
+							>e</scroll-element
+						>r<scroll-element
+							class="inline-block accent"
+							in="rotate"
+							scale="34"
+							keyframes="20,100,100,100"
+							>e</scroll-element
+						>nt animation typ<scroll-element
+							class="inline-block accent"
+							in="rotate"
+							scale="10"
+							keyframes="20,100,100,100"
+							>e</scroll-element
+						>s allows for mor<scroll-element
+							class="inline-block accent"
+							in="rotate"
+							scale="25"
+							keyframes="20,100,100,100"
+							>e</scroll-element
+						>
+						compl<scroll-element
+							class="inline-block accent"
+							in="rotate"
+							scale="15"
+							keyframes="20,100,100,100"
+							>e</scroll-element
+						>x animations.
+					</scroll-element>
+				</scroll-section>
 			</scroll-journey>
 		</div>
 		<script type="module" src="/src/main.ts"></script>

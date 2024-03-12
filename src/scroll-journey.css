@@ -603,7 +603,7 @@ video {
 }
 
 :root {
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   line-height: 1.5;
@@ -618,12 +618,11 @@ video {
 }
 
 .noto {
-  font-family: "Noto Serif", serif;
+  font-family: 'Noto Serif', serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-	  "wdth" 100;
+  font-variation-settings: 'wdth' 100;
 }
 
 body {
@@ -740,12 +739,12 @@ This is all bit crap but gets us up and running
 .gallery img {
   height: 60lvh;
   width: auto;
-  margin: 0 2rem
+  margin: 0 2rem;
 }
 
 .dark-green {
   color: #fff;
-  background-color: #1F2833;
+  background-color: #1f2833;
 }
 
 @media (min-width: 768px) {

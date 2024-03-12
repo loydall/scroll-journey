@@ -6,5 +6,5 @@ export enum AnimationType {
 	ClipRectangle = 'clip-rectangle',
 	None = 'none',
 	ScrollLeft = 'scroll-left',
-	Rotate = 'rotate'
+	Rotate = 'rotate',
 }
