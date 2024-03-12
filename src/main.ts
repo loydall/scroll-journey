@@ -1,5 +1,8 @@
 import { ScrollSection } from './models/ScrollSection.model'
-import { registerSections, updateScrollSections } from './utils/ScrollSection.utils'
+import {
+	registerSections,
+	updateScrollSections,
+} from './utils/ScrollSection.utils'
 
 let scrollSections: Array<ScrollSection>
 let targetY: number = window.scrollY
@@ -7,7 +10,7 @@ const easing = 25
 const maxSpeed = 70
 let isScrolling: boolean = false
 
-const handleScroll = () => {
+const handleScroll = (): void => {
 	const scrollY = window.scrollY
 	if (targetY === scrollY) {
 		isScrolling = false
@@ -26,13 +29,13 @@ const handleScroll = () => {
 	requestAnimationFrame(handleScroll)
 }
 
-const shouldHandleScroll = () => {
+const shouldHandleScroll = (): void => {
 	if (isScrolling) return
 	isScrolling = true
 	handleScroll()
 }
 
-const scrollJourney = () => {
+const scrollJourney = (): void => {
 	const scrollJourneys = document.querySelectorAll('scroll-journey')
 	if (!scrollJourneys) return
 	if (scrollJourneys.length > 1) {

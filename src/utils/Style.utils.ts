@@ -7,7 +7,7 @@ export const setElementStyles = (
 	animationComplete: number,
 	animationDirection: AnimationDirection,
 	scale: number = 1,
-) => {
+): void => {
 	switch (animationType) {
 		case AnimationType.Fade: {
 			switch (animationDirection) {

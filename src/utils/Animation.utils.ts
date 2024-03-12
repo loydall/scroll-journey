@@ -1,7 +1,7 @@
-import { AnimationDirection } from "../models/AnimationDirection.model"
-import { ScrollElement } from "../models/ScrollElement.model"
-import { ScrollSection } from "../models/ScrollSection.model"
-import { setElementStyles } from "./Style.utils"
+import { AnimationDirection } from '../models/AnimationDirection.model'
+import { ScrollElement } from '../models/ScrollElement.model'
+import { ScrollSection } from '../models/ScrollSection.model'
+import { setElementStyles } from './Style.utils'
 
 export const applySectionAnimation = (
 	animationInComplete: number,
@@ -30,8 +30,10 @@ export const applySectionAnimation = (
 	}
 }
 
-
-export const applyElementAnimations = (scrollElements: Array<ScrollElement>, targetY: number): void => {
+export const applyElementAnimations = (
+	scrollElements: Array<ScrollElement>,
+	targetY: number,
+): void => {
 	scrollElements.forEach((scrollElement: ScrollElement) => {
 		let animationInComplete = 0
 
